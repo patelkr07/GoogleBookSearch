@@ -6,8 +6,3 @@ mongoose.connect(
     "mongodb://localhost/"
 );
 
-const bookSeed = [
-    {
-        
-    }
-]
