@@ -1,5 +1,14 @@
-const db = require("../models")
+const db = require("../models");
 
-module.exports = {
-    
-}
+// Defining methods for the booksController
+
+/*PSEUDO-CODE
+
+module.exports 
+    find All
+
+    create
+
+    remove
+
+    */
