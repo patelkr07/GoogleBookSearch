@@ -90,13 +90,7 @@ class App extends Component {
 
 export default App;
 
-/* PSEUDO-CODE
 
-/* NOTES/
-
-While the above is rendering, I believe the form is not properly submitting because of incorrect component names/references since it's based on both the recipe exercise and the Book list. While I changed the query URL from the recipe API to the Google Books API url, I think it may still broken because the API isn't properly being called or my code doesn't match the JSON response format...? Also my booksController file is empty
-
-*/
 
 
 
