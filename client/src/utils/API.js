@@ -9,19 +9,19 @@ export default {
 
 
     getBooks: function() {
-        return axios.get("/api/books/")
+        return axios.get("/api/books")
     },
 
-    getBook: function(id) {
-        return axios.get("/api/books/" + id)
+    getBook: function(query) {
+        return axios.get(BASEURL + query)
     },
 
     deleteBook: function(id) {
-        return axios.delete("/api/books/")
+        return axios.delete("/api/books/" + id)
     },
 
     saveBook: function(bookData) {
-        return axios.post("/api/books")
+        return axios.post("/api/books", bookData)
     }
 }
 

@@ -22,7 +22,7 @@ class App extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    API.getBooks(this.state.bookSearch)
+    API.search(this.state.bookSearch)
     .then(res => this.setState({ books: res.data }))
     .catch(err => console.log(err));
 
