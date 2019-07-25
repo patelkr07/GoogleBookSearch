@@ -9,21 +9,25 @@ import { Container, Row, Col } from "./components/Grid";
 
 class App extends Component {
   state = {
-    books: [],
-    bookSearch: ""
+    bookSearch: "",
+    books: []
   };
 
+  // handleInputChange = event => {
+  //   const { name, value } = event.target;
+  //   this.setState({
+  //     [name]: value
+  //   });
+  // };
+
   handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
+    this.setState({ bookSearch: event.target.value })
+  }
 
   handleFormSubmit = event => {
     event.preventDefault();
     API.search(this.state.bookSearch)
-    .then(res => this.setState({ books: res.data }))
+    .then(res => this.setState({ books: res.data.items }))
     .catch(err => console.log(err));
 
   };
@@ -69,13 +73,12 @@ class App extends Component {
                   {this.state.books.map(book => {
                     return (
                       <BookListItem
-                        key={book.title}
-                        title={book.title}
-                        authors={book.authors}
-                        description={book.description}
-                        image={book.image}
-                        link={book.link}
-                        thumbnail={book.thumbnail}
+                        key={book.id}
+                        title={book.volumeInfo.title}
+                        authors={book.volumeInfo.authors}
+                        description={book.volumeInfo.description}
+                        image={book.volumeInfo.imageLinks.thumbnail}
+                        link={book.previewLink}
                       />
                     );
                   })}

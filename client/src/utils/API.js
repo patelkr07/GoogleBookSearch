@@ -12,8 +12,8 @@ export default {
         return axios.get("/api/books")
     },
 
-    getBook: function(query) {
-        return axios.get(BASEURL + query)
+    getBook: function(id) {
+        return axios.get("/api/books/" + id)
     },
 
     deleteBook: function(id) {

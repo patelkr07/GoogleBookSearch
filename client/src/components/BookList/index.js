@@ -24,6 +24,7 @@ export function BookListItem({
                     <Col size="xs-8 sm-9">
                         <h3>{title}</h3>
                         <p>Author: {authors}</p>
+                        <p>Description: {description}</p>
                         <a rel="noreferrer noopener" target="_blank" href={link}>
                             Go to book!
                         </a>
